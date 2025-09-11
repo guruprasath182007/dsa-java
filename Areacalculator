@@ -1,0 +1,55 @@
+abstract class shape{
+    abstract void printArea();
+}
+
+class Rectangle extends shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    void printArea() {
+        System.out.println("Area of the Reactangle;" + length * width);
+    }
+}
+
+class Triangle extends shape {
+    double base, height;
+
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    void printArea() {
+        System.out.println("Area of the triangle;" + 0.5 * base * height);
+    }
+}
+
+class circle extends shape {
+    double radius;
+
+    circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    void printArea() {
+        System.out.println("Area of the circle;" + Math.PI * radius * radius);
+    }
+}
+
+public class Areacalculator{
+    public static void main(String[] args) {
+        shape rect = new Rectangle(5, 10);
+        shape tri = new Triangle(5, 10);
+        shape circ = new circle(5);
+        rect.printArea();
+        tri.printArea();
+        circ.printArea();
+    }
+}
